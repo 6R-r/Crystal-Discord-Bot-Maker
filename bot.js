@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-console.log(Discord);
+try{
 const client = new Discord.Client();
 
  
@@ -27,3 +27,6 @@ client.on('message', message => {
 // THIS  MUST  BE  THIS  WAY
 
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
+}catch{
+ console.log('bot failed to launch');
+}
