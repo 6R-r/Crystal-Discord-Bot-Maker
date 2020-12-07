@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-
+console.log(Discord);
 const client = new Discord.Client();
 
  
