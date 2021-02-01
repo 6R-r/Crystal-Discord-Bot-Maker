@@ -5,3 +5,24 @@
 [![Express 5.0.0](https://img.shields.io/badge/express-14.7.1-red.svg)](https://expressjs.com/)
 ## Contributors
 * [**@BayoDino:**](https://github.com/BayoDino) The main programmer
+## How to Install
+Fork this repository to your Device (node.js must be installed) using this command:
+```
+# Clone this repository
+$ git clone https://github.com/BayoDino/Crystal-Discord-Bot-Maker
+cd Crystal-Discord-Bot-Maker
+# Install dependencies
+npm install
+```
+Before you start running this Engine, you have to configure your bot files in order to work:
+## 1. Modify config.js
+   1.Open config.js file using a code editor (or notepad) 
+   2. In `command: 'c!',`, change the prefix to the ones you prefer, the default command prefix is `c!`, for example if you set it to `bd!`, the bot will trigger when you send `bd!<command>`
+   3. you can customise this too:
+   ```
+     game: {
+            name: "c!help",
+            type: "PLAYING"
+        },
+    ```
+    <img src="https://cdn.discordapp.com/attachments/803296152233312286/805694154235183125/bayodino-4.jpg">
