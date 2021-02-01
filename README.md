@@ -16,8 +16,8 @@ npm install
 ```
 Before you start running this Engine, you have to configure your bot files in order to work:
 ## 1. Modify config.js
-   1.Open config.js file using a code editor (or notepad) 
-   2. In `command: 'c!',`, change the prefix to the ones you prefer, the default command prefix is `c!`, for example if you set it to `bd!`, the bot will trigger when you send `bd!<command>`
+   1.Open config.js file using a code editor (or notepad) <br>
+   2. In `command: 'c!',`, change the prefix to the ones you prefer, the default command prefix is `c!`, for example if you set it to `bd!`, the bot will trigger when you send `bd!<command>`</br>
    3. you can customise this too:
    
 ```js
