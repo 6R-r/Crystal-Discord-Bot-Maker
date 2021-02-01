@@ -18,7 +18,7 @@ Before you start running this Engine, you have to configure your bot files in or
 ## 1. Modify config.js
    1.Open config.js file using a code editor (or notepad) <br>
    2. In `command: 'c!',`, change the prefix to the ones you prefer, the default command prefix is `c!`, for example if you set it to `bd!`, the bot will trigger when you send `bd!<command>`</br>
-   3. you can customise this too:
+   3. you can customise this too: [![discord.js 11.5.1](https://img.shields.io/badge/discord.js-12.0.1-green.svg)](https://shields.io/)
    
 ```js
      game: {
