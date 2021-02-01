@@ -3,3 +3,5 @@
 [![Node.js 10.16.3](https://img.shields.io/badge/Node.js-10.16.3-brightgreen.svg)](https://nodejs.org/en/)
 [![Sqlite 5.0.0](https://img.shields.io/badge/sqlite3-5.0.0-blue.svg)](https://sqlite.org/)
 [![Express 5.0.0](https://img.shields.io/badge/express-14.7.1-red.svg)](https://expressjs.com/)
+## Contributors
+* [**@BayoDino:**](https://github.com/BayoDino) The main programmer
