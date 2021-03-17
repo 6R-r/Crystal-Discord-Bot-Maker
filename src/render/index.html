@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+		<style>
+			html,body{
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			background: #36393f;
+			font-family: 'Roboto', sans-serif;
+			}
+			a:-webkit-any-link {
+			 color: #7289da;
+			 cursor: pointer;
+			 text-decoration: underline;
+			 transition: 0.5s;
+			}
+			a:hower{
+			color: blue;
+			}
+			.header{
+			width:100%;
+			background: #7289da;
+			color: white;
+			}
+			.card {
+			  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+			  transition: 0.5s;
+			  width: 49%;
+			  border-radius: 5px;
+			  margin-top:5px;
+			  float: left;
+			}
+			@media only screen and (max-width: 600px) {
+			  .card {
+				float: none;
+				width: 100%;
+			  }
+			}
+			.card:hover {
+			  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+			  margin-top:0px;
+			  cursor: pointer;
+			}
+
+			.card .container {
+			  padding: 2px 16px;
+			  height: 125px;
+			}
+			.card bt {
+			  font-size: 25px;
+			}
+			menu {
+			 width: 100%;
+			 height: 35px;
+			 background: #7289da;
+			 margin-top: -20px;
+			 margin-left: -15px;
+			}
+			menu btn {
+			 margin-top: 0px;
+			 margin-right: 17px;
+			 margin-left: 17px;
+			 /*height: 25px;*/
+			 float: right;
+			}
+			/* width */
+			::-webkit-scrollbar {
+			  width: 10px;
+			}
+
+			/* Track */
+			::-webkit-scrollbar-track {
+			  box-shadow: inset 0 0 5px grey;
+			  border-radius: 10px;
+			}
+
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+			  background: #7289da;
+			  border-radius: 10px;
+			}
+			widget{
+			 transition: all 2s linear;
+			}
+			.inactive{
+			  /*transition: 0.5s;*/
+			  display: none;
+			}
+			td{
+			max-height: 150px;
+			}
+			input[type=text] {
+			  width: 100%;
+			  -webkit-transition: background .35s ease-in-out;
+			  transition: background .35s ease-in-out;
+			  height: 35px;
+			  background: #7289DA;
+			  color: white;
+			  padding-left: 10px;
+			}
+			input[type=text]:focus {
+			  background: #50619c;
+			}
+			::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+			  color: #FFF9;
+			  opacity: 1; /* Firefox */
+			}
+
+			:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			  color: #FFF9;
+			}
+
+			::-ms-input-placeholder { /* Microsoft Edge */
+			  color: #FFF9;
+			}
+			button {
+			  margin-top: 5px;
+			  background-color: #7289DA;
+			  border: none;
+			  color: white;
+			  padding: 15px 32px;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  transition: .5s;
+			  width: 150px;
+			  height:75px;
+			}
+			button:hover {
+			  cursor: pointer;
+			  margin-top: 5px;
+			  background-color: #50619c;
+			}
+			button:disabled {
+			  background: rgb(116,127,141);
+			}
+
+		</style>
+		<script>
+			const ipc = require('electron').ipcRenderer;
+			const Disco = require('discord.js');
+		</script>
+	</head>
+	<body style='color:white;padding: 20px; margin:0;'>
+	   <div><table><tbody><tr><td><img src='./logo.png' width='100'></td><td style='font-size: 60px'>Crystal</td></tr></tbody></table></div>
+	   <script>
+	   </script>
+	   <script>
+       // rest of functions
+			function toggleWidget(wid){
+			var wids = document.querySelectorAll('widget');
+			  document.getElementById('wid-'+wid).classList.toggle('inactive');
+			  wids.forEach(a=>{
+			    if (a.id != 'wid-'+wid)
+			    a.classList.toggle('inactive');
+			  });
+			}
+			function tokenVerify(token){
+			  
+			}
+			// Event handlers
+			const tokVal = document.getElementById('tokVal'),
+			verStats = document.getElementById('verStats'), 
+			tokNext = document.getElementById('tokNext');
+			tokVal.addEventListener('click', () => {
+			  verStats.innerHTML= "Waiting for the Discord API reply";
+			  var a = document.getElementById('tok').value;
+			  const cliantD = new Disco.Client();
+              cliantD.login(a)
+			  .then(()=>{
+			  verStats.innerHTML= "Token is valid";
+			  tokNext.disabled=false;
+			  })
+			  .catch((e)=>{
+			     verStats.innerHTML= e;
+			  });
+			});
+	   </script>
+	</body>
+</html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+		<style>
+			html,body{
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			background: #36393f;
+			font-family: 'Roboto', sans-serif;
+			}
+			a:-webkit-any-link {
+			 color: #7289da;
+			 cursor: pointer;
+			 text-decoration: underline;
+			 transition: 0.5s;
+			}
+			a:hower{
+			color: blue;
+			}
+			.header{
+			width:100%;
+			background: #7289da;
+			color: white;
+			}
+			.card {
+			  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+			  transition: 0.5s;
+			  width: 49%;
+			  border-radius: 5px;
+			  margin-top:5px;
+			  float: left;
+			}
+			@media only screen and (max-width: 600px) {
+			  .card {
+				float: none;
+				width: 100%;
+			  }
+			}
+			.card:hover {
+			  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+			  margin-top:0px;
+			  cursor: pointer;
+			}
+
+			.card .container {
+			  padding: 2px 16px;
+			  height: 125px;
+			}
+			.card bt {
+			  font-size: 25px;
+			}
+			menu {
+			 width: 100%;
+			 height: 35px;
+			 background: #7289da;
+			 margin-top: -20px;
+			 margin-left: -15px;
+			}
+			menu btn {
+			 margin-top: 0px;
+			 margin-right: 17px;
+			 margin-left: 17px;
+			 /*height: 25px;*/
+			 float: right;
+			}
+			/* width */
+			::-webkit-scrollbar {
+			  width: 10px;
+			}
+
+			/* Track */
+			::-webkit-scrollbar-track {
+			  box-shadow: inset 0 0 5px grey;
+			  border-radius: 10px;
+			}
+
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+			  background: #7289da;
+			  border-radius: 10px;
+			}
+			widget{
+			 transition: all 2s linear;
+			}
+			.inactive{
+			  /*transition: 0.5s;*/
+			  display: none;
+			}
+			td{
+			max-height: 150px;
+			}
+			input[type=text] {
+			  width: 100%;
+			  -webkit-transition: background .35s ease-in-out;
+			  transition: background .35s ease-in-out;
+			  height: 35px;
+			  background: #7289DA;
+			  color: white;
+			  padding-left: 10px;
+			}
+			input[type=text]:focus {
+			  background: #50619c;
+			}
+			::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+			  color: #FFF9;
+			  opacity: 1; /* Firefox */
+			}
+
+			:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			  color: #FFF9;
+			}
+
+			::-ms-input-placeholder { /* Microsoft Edge */
+			  color: #FFF9;
+			}
+			button {
+			  margin-top: 5px;
+			  background-color: #7289DA;
+			  border: none;
+			  color: white;
+			  padding: 15px 32px;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  transition: .5s;
+			  width: 150px;
+			  height:75px;
+			}
+			button:hover {
+			  cursor: pointer;
+			  margin-top: 5px;
+			  background-color: #50619c;
+			}
+			button:disabled {
+			  background: rgb(116,127,141);
+			}
+
+		</style>
+		<script>
+			const ipc = require('electron').ipcRenderer;
+			const Disco = require('discord.js');
+		</script>
+	</head>
+	<body style='color:white;padding: 20px; margin:0;'>
+	   <div><table><tbody><tr><td><img src='./logo.png' width='100'></td><td style='font-size: 60px'>Crystal</td></tr></tbody></table></div>
+	   <script>
+	   </script>
+	   <widget class="" id="wid-1">
+	   <table><tbody>
+	   <tr>
+	   <td>
+	   <div class="card" onclick="toggleWidget(2)">
+		<div style='max-height:70px; width:95%; background: #7289da;border-radius: 5px 5px 0 0; padding: 5% 0 5% 5%;'><bt>Create New C-Bot</bt></div>
+		<div class="container">
+		 <p>Create a new Crystal bot, You'll be required to enter your bot token in order to make a new discord bot using Crystal</p> 
+		</div>
+	   </div>
+	   <div class="card">
+		<div style='max-height:70px; width:95%; background: #7289da;border-radius: 5px 5px 0 0; padding: 5% 0 5% 5%;'><bt>Modify a C-Bot file</bt></div>
+		<div class="container">
+		 <p>Open an existing .cdbm file, save your c-bot as .cdbm file or convert your c-bot into the prepared Discord bot source code (in node.js) which can be hosted on a bot hosting.</p> 
+		</div>
+	   </div>
+	   </td>
+	   </tr>
+	   <tr><td>
+	   <div class="card">
+		<div style='max-height:70px; width:95%; background: #7289da;border-radius: 5px 5px 0 0; padding: 5% 0 5% 5%;'><bt>Have issues or questions?</bt></div>
+		<div class="container">
+		 <p>Please create a new issue at <a href='https://github.com/BayoDino/Crystal-Discord-Bot-Maker/issues' target='_blank'>our issues page</a> If you've found a bug, have a question or want to suggest something.</p> 
+		</div>
+	   </div>
+	   	<div class="card">
+		<div style='max-height:70px; width:95%; background: #7289da;border-radius: 5px 5px 0 0; padding: 5% 0 5% 5%;'><bt>Create New Bot</bt></div>
+		<div class="container">
+		 <p>Create a new Crystal bot, You'll be required to enter your bot token in order to make a new discord bot using Crystal</p> 
+		</div>
+	   </div>
+	   </td>
+	   </tr>
+	   </tbody></table>
+	   </widget>
+	   <widget class="inactive" id="wid-2">
+	   <div style='padding: 30px; background: #00000066'>
+		<p>Before you continue, you've to enter the token of your bot in order to create a new Crystal project for your discord bot.</p>
+		<input type='text' placeholder="Enter your bot's token here" id='tok' value=''><br>
+		<table style="width:100%"><tbody><tr>
+		  <td><button id='tokVal' style="width:100%">Check Validity</button></td>
+		  <td style='width:500px;'><span id='verStats' style='padding-left: 10px;'> Click on "Check Validity" to check the validity of your bot's token</span></td>
+		  <td><button id='tokNext' disabled="disabled" style="width:100%">Create C-bot</button></td>
+		</tr></tbody></table>
+		<p><b>Note:</b> The developer of Crystal doesn't take any responsibility for blocked Discord accounts that used this application for creating selfbots.</p>
+	   </div>
+	   </widget>
+	   <script>
+			function toggleWidget(wid){
+			var wids = document.querySelectorAll('widget');
+			  document.getElementById('wid-'+wid).classList.toggle('inactive');
+			  wids.forEach(a=>{
+			    if (a.id != 'wid-'+wid)
+			    a.classList.toggle('inactive');
+			  });
+			}
+			function tokenVerify(token){
+			  
+			}
+			// Event handlers
+			const tokVal = document.getElementById('tokVal'),
+			verStats = document.getElementById('verStats'), 
+			tokNext = document.getElementById('tokNext');
+			tokVal.addEventListener('click', () => {
+			  verStats.innerHTML= "Waiting for the Discord API reply";
+			  var a = document.getElementById('tok').value;
+			  const cliantD = new Disco.Client();
+              cliantD.login(a)
+			  .then(()=>{
+			  verStats.innerHTML= "Token is valid";
+			  tokNext.disabled=false;
+			  })
+			  .catch((e)=>{
+			     verStats.innerHTML= e;
+			  });
+			});
+	   </script>
+	</body>
+</html>
