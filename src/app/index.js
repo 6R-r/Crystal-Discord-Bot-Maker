@@ -1,4 +1,5 @@
 const { ipcMain, app, BrowserWindow, Menu } = require('electron');
+const path = require("path");
 const client = require(__dirname+'/src/app/drp.js')('635084414543462412');
 
 function createWindow () {
@@ -80,7 +81,7 @@ function setMainMenu() {
           label: 'About',
           accelerator: 'Shift+CmdOrCtrl+H',
           click() {
-              console.log('Oh, hi there!')
+              console.log('About')
           }
         }
       ]
