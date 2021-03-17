@@ -14,7 +14,7 @@ function createWindow () {
     titleBarStyle: 'customButtonsOnHover', frame: false,
   })
 
-  win.loadFile('loading.html');
+  win.loadFile(__dirname+'/src/render/loading.html');
   win.once('ready-to-show', () => {
   win.show();
   //then create the main page
@@ -33,7 +33,7 @@ function createWindow () {
 	e.preventDefault();
 	require('electron').shell.openExternal(url);
   });
-  mainwin.loadFile('index.html');
+  mainwin.loadFile(__dirname+'/src/render/index.html');
   mainwin.once('ready-to-show', () => {
     win.close();
     mainwin.show();
